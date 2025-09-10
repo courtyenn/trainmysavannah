@@ -1,22 +1,39 @@
+---
+import "../styles/global.css"
+import { getImage } from "astro:assets"
+import BgImage from "../assets/cat_fur.png"
+const bgImg = await getImage({ src: BgImage })
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <meta name="generator" content={Astro.generator} />
+    <title>Home | Train My Savannah</title>
+    <link rel="stylesheet" href="https://use.typekit.net/acb3vaj.css" />
+  </head>
+  <body
+    class="container mx-auto font-body backdrop-brightness-60"
+    style={`background-image: url(${bgImg.src});`}
+  >
+    <div
+      class="py-10 mx-auto flex gap-y-10 flex-wrap content-start text-center"
+    >
+      <slot />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0 auto;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
 </style>

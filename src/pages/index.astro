@@ -1,11 +1,68 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro"
+import Picture from "astro/components/Picture.astro"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="basis-full">
+    <h1
+      class="text-6xl md:text-7xl lg:text-8xl font-title text-amber-400 drop-shadow-amber-50"
+    >
+      Train My Savannah
+    </h1>
+  </div>
+  <div class="basis-full flex justify-center">
+    <div
+      class="mask-radial-at-center mask-radial-from-100% overflow-hidden rounded-[50%] border-amber-300 border-2 w-[200px] h-[200px]"
+    >
+      <Picture
+        src="/src/assets/initial.png"
+        alt="me and cat"
+        pictureAttributes={{
+          class: "",
+        }}
+        width={200}
+        height={200}
+      />
+    </div>
+  </div>
+  <div class="w-sm mx-auto pt-10 flex-wrap flex gap-y-6">
+    <a
+      class="button bg-amber-300 basis-full rounded-lg px-2 py-4 text-lg hover:bg-amber-200"
+      href="https://trainmysavannah.youcanbook.me"
+    >
+      Free 15-minute Consultation
+    </a>
+    <a
+      class="button bg-amber-300 basis-full rounded-lg px-2 py-4 text-lg hover:bg-amber-200"
+      href="mailto:meow@trainmysavannah.com"
+    >
+      Email me
+    </a>
+    <a
+      class="button bg-amber-300 basis-full rounded-lg px-2 py-4 text-lg hover:bg-amber-200"
+      href="https://www.instagram.com/trainmysavannah/"
+    >
+      Instagram
+    </a>
+    <!-- <div
+      class="embedded-booking"
+      data-url="https://trainmysavannah.trafft.com"
+      data-query="&t=s&uuid=395de416-78e5-4c6e-b0b7-37c4639a7fcd"
+      data-lang="en"
+      data-autoresize="0"
+      data-showsidebar="1"
+    >
+    </div>
+    <script
+      is:inline
+      type="text/javascript"
+      src="https://trainmysavannah.trafft.com/embed.js"
+      async
+    ></script> -->
+    <!-- Embedded booking end -->
+  </div>
 </Layout>
