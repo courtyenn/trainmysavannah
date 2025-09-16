@@ -16,7 +16,7 @@ const bgImg = await getImage({ src: BgImage, widths: [720, 1024, 2048] })
     <link rel="stylesheet" href="https://use.typekit.net/acb3vaj.css" />
   </head>
   <body
-    class="container mx-auto font-body backdrop-brightness-60"
+    class="container font-body backdrop-brightness-60"
     style={`background-image: url(${bgImg.src});`}
   >
     <div
@@ -28,11 +28,15 @@ const bgImg = await getImage({ src: BgImage, widths: [720, 1024, 2048] })
 </html>
 
 <style>
-  html,
+  html {
+    width: 100%;
+    height: 100%;
+  }
   body {
     background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 </style>
