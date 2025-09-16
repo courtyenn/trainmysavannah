@@ -2,7 +2,9 @@
 import "../styles/global.css"
 import { getImage } from "astro:assets"
 import BgImage from "../assets/cat_fur.png"
+import Banner from "../assets/banner_trainmysav.png"
 const bgImg = await getImage({ src: BgImage, widths: [720, 1024, 2048] })
+const bannerImg = await getImage({ src: Banner })
 ---
 
 <!doctype html>
@@ -12,7 +14,34 @@ const bgImg = await getImage({ src: BgImage, widths: [720, 1024, 2048] })
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="generator" content={Astro.generator} />
-    <title>Home | Train My Savannah</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`trainmysavannah.com`} />
+    <meta property="og:title" content={`Train My Savannah | Cat Trainer`} />
+    <meta
+      property="og:description"
+      content={"Cat Trainer specializing in Savannah cat breed.Online consultations, in-person training, and hosting for cats. A peaceful home is one-click away!"}
+    />
+    <meta property="og:image" content={bannerImg.src} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={`trainmysavannah.com`} />
+    <meta
+      property="twitter:title"
+      content={`Train My Savannah | Cat Trainer`}
+    />
+    <meta
+      property="twitter:description"
+      content={"Cat Trainer specializing in Savannah cat breed.Online consultations, in-person training, and hosting for cats. A peaceful home is one-click away!"}
+    />
+    <meta property="twitter:image" content={bannerImg.src} />
+
+    <title>Train My Savannah | Cat Trainer</title>
+    <meta name="title" content={`Train My Savannah | Cat Trainer`} />
+    <meta
+      name="description"
+      content={"Cat Trainer specializing in Savannah cat breed.Online consultations, in-person training, and hosting for cats. A peaceful home is one-click away!"}
+    />
     <link rel="stylesheet" href="https://use.typekit.net/acb3vaj.css" />
   </head>
   <body
