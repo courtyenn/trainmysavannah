@@ -2,7 +2,7 @@
 import "../styles/global.css"
 import { getImage } from "astro:assets"
 import BgImage from "../assets/cat_fur.png"
-const bgImg = await getImage({ src: BgImage })
+const bgImg = await getImage({ src: BgImage, widths: [720, 1024, 2048] })
 ---
 
 <!doctype html>
